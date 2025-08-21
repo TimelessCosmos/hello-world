@@ -9,12 +9,9 @@ on:
       - main
 
 jobs:
-  build:
-    runs-on: [self-hosted, JDK-21]
-
-    steps:
-    - name: Checkout code
-      uses: actions/checkout@v3
-
-    - name: Build with Maven
-      run: mvn clean install
+  call-template: 
+    uses: TimelessCosmos/action-template/.github/workflows/maven-build.yml@main
+    #.<org>/<action-template>/.github/workflows/maven0buil.yml@main   
+    # relative path in same repo
+    with:
+      name: "JIa Yi "
