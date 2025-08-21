@@ -9,6 +9,16 @@ on:
       - main
 
 jobs:
+  branch-check:
+    runs-on: [self-hosted, JDK-21]
+    steps:
+      - name: Check branch
+        run: |
+          if [[ "${GITHUB_REF##*/}" != "main" && "${GITHUB_REF##*/}" != "dev" ]]; then
+            echo "Error: Only 'main' or 'dev' branches are allowed."
+            exit 1
+          fi
+
   call-template: 
     uses: TimelessCosmos/action-template/.github/workflows/maven-build.yml@main
     #.<org>/<action-template>/.github/workflows/maven0buil.yml@main   
