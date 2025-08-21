@@ -14,4 +14,5 @@ jobs:
     #.<org>/<action-template>/.github/workflows/maven0buil.yml@main   
     # relative path in same repo
     with:
-      name: "JIa Yi "
+      name: "Jia Yi "
+      branch: ${{ github.ref_name }}
