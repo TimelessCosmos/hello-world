@@ -12,7 +12,7 @@ on:
 
 jobs:
   branch-check:
-    runs-on: [self-hosted, JDK-21]
+    runs-on: ubuntu-latest
     steps:
       - name: Check branch
         run: |
